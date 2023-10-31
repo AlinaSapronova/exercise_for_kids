@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :exercises
+  resources :days
+  resources :challenges
+  resources :children
   devise_for :users
   root "users#home"
 

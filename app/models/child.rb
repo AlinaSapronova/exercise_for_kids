@@ -11,4 +11,8 @@
 #  user_id    :integer
 #
 class Child < ApplicationRecord
+
+  def age
+    (Date.today - self.birthday).to_i/365
+  end
 end

@@ -8,6 +8,7 @@ class ChildrenController < ApplicationController
 
   # GET /children/1 or /children/1.json
   def show
+    @children = Child.all
   end
 
   # GET /children/new

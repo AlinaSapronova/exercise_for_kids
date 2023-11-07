@@ -2,6 +2,11 @@
 
 <%= render @challenge %>
 
+<%= Day.all %>
+
+
+<hr>
+
 <div>
   <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> |
   <%= link_to "Back to challenges", challenges_path %>

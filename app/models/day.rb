@@ -10,4 +10,7 @@
 #  exercise_id  :integer
 #
 class Day < ApplicationRecord
+
+  has_many :exercises, class_name: "Exercise", foreign_key: "exercise_id"
+
 end

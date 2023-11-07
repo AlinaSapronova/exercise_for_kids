@@ -11,4 +11,6 @@
 #  user_id    :integer
 #
 class Challenge < ApplicationRecord
+  has_many :days, class_name: "Day", foreign_key: "day_id"
+
 end

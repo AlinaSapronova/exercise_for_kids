@@ -1,4 +1,4 @@
-<%= form_with(model: exercise) do |form| %>
+<%= form_for exercise, url: exercises_path, html: { enctype: "multipart/form-data" } do |f| %>
   <% if exercise.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
 
-  <div>
-    <%= form.label :video_url, style: "display: block" %>
-    <%= form.text_field :video_url %>
-  </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :video %><br>
+    <%= f.file_field :video %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Upload Exercise" %>
   </div>
 <% end %>

@@ -2,18 +2,14 @@
 
   <p>
     <strong>Name:</strong>
-    <%= child.name %>
+    <%= child.name %> (<%= child.age %> years old)
   </p>
 
   <p>
     <strong>Birthday:</strong>
     <%= child.birthday.strftime("%B %d, %Y") %>
   </p>
-    <p>
-    <strong>Age:</strong>
-    <%= child.age %>
-  </p>
-
+    
   <p>
     <strong>Gender:</strong>
     <%= child.gender %>

@@ -4,13 +4,12 @@
 
 <div class="day_images">
 
-<% Day.all.each do |d| %>
-
+<% @challenge.number_of_days.each do |day| %>
   <div class="image-background">
     <p><%= link_to "#{d.id}", exercises_path, class: "image-link" %></p>
   </div>
+<%end%>
 
-<% end %>
 </div>
 
 <hr>
@@ -18,6 +17,5 @@
 <div>
   <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> |
   <%= link_to "Back to challenges", challenges_path %>
-
   <%= button_to "Destroy this challenge", @challenge, method: :delete %>
 </div>

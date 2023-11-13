@@ -3,12 +3,12 @@ class ChildrenController < ApplicationController
 
   # GET /children or /children.json
   def index
-    @children = Child.all
+    @children = Child.where(:user_id => current_user.id)
   end
 
   # GET /children/1 or /children/1.json
   def show
-    @children = Child.all
+    @children = Child.where(:user_id => current_user.id)
     @challenges = Challenge.all
   end
 

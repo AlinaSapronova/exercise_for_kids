@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_31_203347) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_13_154024) do
   create_table "challenges", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "active"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_203347) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "number_of_days"
   end
 
   create_table "children", force: :cascade do |t|

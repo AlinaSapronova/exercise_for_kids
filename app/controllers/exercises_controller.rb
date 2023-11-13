@@ -36,6 +36,7 @@ class ExercisesController < ApplicationController
 
   # PATCH/PUT /exercises/1 or /exercises/1.json
   def update
+   
     respond_to do |format|
       if @exercise.update(exercise_params)
         format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully updated." }

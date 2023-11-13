@@ -9,6 +9,7 @@ class ChildrenController < ApplicationController
   # GET /children/1 or /children/1.json
   def show
     @children = Child.all
+    @challenges = Challenge.all
   end
 
   # GET /children/new
@@ -27,7 +28,7 @@ class ChildrenController < ApplicationController
     respond_to do |format|
       if @child.save
         format.html { redirect_to child_url(@child), notice: "Child was successfully created." }
-        format.json { render :show, status: :created, location: @child }
+        format.json { render root_path, status: :created, location: @child }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @child.errors, status: :unprocessable_entity }

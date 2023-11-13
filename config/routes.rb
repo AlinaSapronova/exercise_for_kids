@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get "/profile", to: "profile#show"
 
   authenticated :user do
-    root "challenges#index", as: :authenticated_root
+    root "main#welcome", as: :authenticated_root
   end
 
   # landing page if you are not logged in

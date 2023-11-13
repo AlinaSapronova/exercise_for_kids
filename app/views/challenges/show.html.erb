@@ -2,8 +2,16 @@
 
 <%= render @challenge %>
 
-<%= Day.all %>
+<div class="day_images">
 
+<% Day.all.each do |d| %>
+
+  <div class="image-background">
+    <p><%= link_to "#{d.id}", exercises_path, class: "image-link" %></p>
+  </div>
+
+<% end %>
+</div>
 
 <hr>
 

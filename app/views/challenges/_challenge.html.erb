@@ -1,6 +1,3 @@
-<div id="<%= dom_id challenge %>" >
-  <button>
-  <%= link_to "#{challenge.title}", challenge %>
-  </button>
-
+<div class="d-grid gap-2 col-6 mx-auto" id="<%= dom_id challenge %>">
+  <button class="btn m-2 p-3 fs-4" ><%= link_to "#{challenge.title}", challenge, class: "link" %></button>
 </div>

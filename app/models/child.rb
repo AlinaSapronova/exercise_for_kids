@@ -12,6 +12,9 @@
 #
 class Child < ApplicationRecord
 
+  belongs_to :parent, required: true, class_name: "User", foreign_key: "user_id"
+  has_many  :challenges, class_name: "Challenge", foreign_key: "child_id"
+
   def age
     (Date.today - self.birthday).to_i/365
   end

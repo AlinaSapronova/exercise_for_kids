@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  root "main#welcome"
+  
   devise_for :users
 
   get "/profile", to: "profile#show"
+
+  authenticated :user do
+    root "challenges#index", as: :authenticated_root
+  end
+
+  # landing page if you are not logged in
+  root "main#welcome" 
   
   resources :exercises
   resources :days

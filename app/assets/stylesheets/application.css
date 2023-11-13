@@ -13,3 +13,120 @@
  *= require_tree .
  *= require_self
  */
+
+ .welcome{
+  background-image: url("background.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  font-family: 'IBM Plex Sans', sans-serif;
+ }
+ h1{
+  font-size: 60px;
+  color:#EFEAD8;
+  text-align: center;
+}
+.babyBtn2{
+  padding: 20px;
+  margin: 20px;
+  background-color: #6D8B74;
+  font-size: 25px;
+  color: #EFEAD8;
+  border-radius: 10px;
+  border: none;
+}
+.promo{
+  text-align: center;
+  width: 60%;
+  background-color: #d0c9c0c3;
+  color:#5F7161;
+  padding: 40px;
+  margin: 20px;
+  font-size: 35px;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 10px 10px 10px #5F7161;
+
+}
+.homeP{
+  font-size: 35px;
+  color:#5F7161;
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register{
+  display:flex;
+  justify-content: space-around;
+}
+.h3{
+  font-size: 40px;
+  color:#3e4c40;
+}
+.custom{
+  font-size: 25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+}
+.custom:hover{
+  background-color: #434d44;
+  color: #EFEAD8;
+}
+.navbar,.dropdown-menu{
+  background-color: #EFEAD8;
+}
+#challenge{
+  color:white;
+}
+.btn{
+  border: 2px solid rgb(57, 81, 57);
+  background-color: #b5d0bc;
+  opacity: 0.7;
+
+}
+.link{
+  color:black;
+  text-decoration: none;
+}
+
+.btn:hover{
+  background-color: rgb(73, 143, 136);
+  border: 2px solid rgb(57, 81, 57);
+
+}
+.challenges_page{
+  background-image: url("https://cdn.vectorstock.com/i/preview-1x/01/86/avocado-character-making-exercise-squat-gym-vector-39250186.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height:100vh;
+}
+#header{
+  color:#5F7161
+}
+.day_images{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.image-link {
+  text-align: center;
+  text-decoration: none; /* Removes the underline by default */
+  color: black; /* Change the color of the text if needed */
+  border-radius: 50%;
+  background-image: url("ball.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 100px;
+  font-size: 20px;
+}
+.image-background{
+  margin: 100px;
+}

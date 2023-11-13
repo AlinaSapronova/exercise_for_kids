@@ -10,7 +10,8 @@
 #  exercise_id  :integer
 #
 class Day < ApplicationRecord
+  belongs_to :challenge, class_name: "Challenge", foreign_key: "challenge_id"
 
-  has_many :exercises, class_name: "Exercise", foreign_key: "exercise_id"
+  has_many :exercises, class_name: "Exercise", foreign_key: "day_id"
 
 end

@@ -11,6 +11,8 @@
 #  user_id    :integer
 #
 class Challenge < ApplicationRecord
-  has_many :days, class_name: "Day", foreign_key: "day_id"
+  has_many  :days, class_name: "Day", foreign_key: "challenge_id"
+  belongs_to :parent, class_name: "User", foreign_key: "user_id"
+  belongs_to :child, class_name: "Child", foreign_key: "child_id"
 
 end

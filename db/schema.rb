@@ -33,7 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_154024) do
   create_table "days", force: :cascade do |t|
     t.integer "challenge_id"
     t.date "completed_at"
-    t.integer "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_13_154024) do
   create_table "exercises", force: :cascade do |t|
     t.string "title"
     t.string "video"
+    t.integer "day_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

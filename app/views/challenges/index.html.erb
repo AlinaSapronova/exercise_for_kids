@@ -5,7 +5,7 @@
 <h1 id="header">Challenges</h1>
 
 <div id="challenges">
-  <% @challenges.each do |challenge| %>
+  <% @challenges.order(:number_of_days => :asc).each do |challenge| %>
     <%= render challenge %>
   <% end %>
 </div>

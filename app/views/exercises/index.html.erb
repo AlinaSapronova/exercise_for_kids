@@ -3,7 +3,6 @@
 <h1 id="header">Exercises</h1>
 
 <%= link_to "New exercise", new_exercise_path %>
-
 <div id="exercises">
   <% @exercises.each do |exercise| %>
     <%= render exercise %>

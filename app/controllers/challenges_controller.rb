@@ -8,7 +8,7 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/1 or /challenges/1.json
   def show
-    # @number_of_days = params.fetch(:number_of_days)
+    @challenge_id = params.fetch(:id).to_i
   end
 
   # GET /challenges/new

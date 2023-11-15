@@ -1,21 +1,26 @@
+<body class="registration">
+
 <p style="color: green"><%= notice %></p>
 
-<%= render @challenge %>
+<h3><%= @challenge.number_of_days %> days challenge</h3>
 
 <div class="day_images">
 
-<% @challenge.number_of_days.each do |day| %>
+<% arr = (1..Day.count + 1).to_a.sort{ rand() - 0.5}[1..@challenge.number_of_days].sort %>
+
+<% arr.each do |num| %>
+
   <div class="image-background">
-    <p><%= link_to "#{d.id}", exercises_path, class: "image-link" %></p>
+    <%= link_to "#{num}", exercises_path, class: "image-link" %>
   </div>
-<%end%>
+  
+<% end %>
 
 </div>
 
-<hr>
 
-<div>
-  <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> |
-  <%= link_to "Back to challenges", challenges_path %>
-  <%= button_to "Destroy this challenge", @challenge, method: :delete %>
-</div>
+<%# <div>
+  <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> 
+  <%# <%= link_to "Back to challenges", challenges_path %>
+  <%# <%= button_to "Destroy this challenge", @challenge, method: :delete %> 
+<%# </div> %>

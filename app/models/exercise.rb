@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 class Exercise < ApplicationRecord
-  # belongs_to :day, class_name: "Day", foreign_key: "day_id"
+  belongs_to :day, class_name: "Day", foreign_key: "day_id"
   mount_uploader :video, VideoUploader
 
   before_update :remove_old_video

@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  before_action :set_day
   before_action :set_exercise, only: %i[ show edit update destroy ]
 
   # GET /exercises or /exercises.json
@@ -12,7 +13,8 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/new
   def new
-    @exercise = Exercise.new
+    @exercise = @day.exercises.new
+    
   end
 
   # GET /exercises/1/edit
@@ -21,7 +23,7 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = @day.exercises.new(exercise_params)
 
     respond_to do |format|
       if @exercise.save
@@ -59,6 +61,10 @@ class ExercisesController < ApplicationController
   end
 
   private
+
+  def set_day
+    @day = Day.find(params[:id])
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_exercise

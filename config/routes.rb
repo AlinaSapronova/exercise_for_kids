@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   # landing page if you are not logged in
   root "main#welcome" 
   
-  resources :exercises
-  resources :days
+  resources :days do
+    resources :exercises
+  end
   resources :challenges
   resources :children
  

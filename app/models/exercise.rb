@@ -7,9 +7,11 @@
 #  video      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  day_id     :integer
 #
 class Exercise < ApplicationRecord
-  belongs_to :day, class_name: "Day", foreign_key: "day_id"
+  belongs_to :day
+
   mount_uploader :video, VideoUploader
 
   before_update :remove_old_video
@@ -31,6 +33,4 @@ class Exercise < ApplicationRecord
       end
     end
   end
-  
-  
 end

@@ -5,6 +5,7 @@ class CreateChallenges < ActiveRecord::Migration[7.0]
       t.boolean :active
       t.integer :child_id
       t.string :title
+      t.integer :number_of_days
 
       t.timestamps
     end

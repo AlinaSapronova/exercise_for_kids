@@ -12,7 +12,7 @@
 class Exercise < ApplicationRecord
   belongs_to :day
 
-  mount_uploader :video, VideoUploader
+  # mount_uploader :video, VideoUploader
 
   before_update :remove_old_video
 

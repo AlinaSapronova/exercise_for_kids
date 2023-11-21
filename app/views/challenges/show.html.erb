@@ -1,23 +1,50 @@
-<p style="color: green"><%= notice %></p>
+<body class="daysInChallenge">
 
-<%= render @challenge %>
+  <% Child.where(:user_id => current_user.id).each do |c| %>
+  <%= link_to  "Back to challenges", "/children/#{c.id}", class: "backLink" %>     
+  <% end %>
 
-<div class="day_images">
+<div>
+<h2 class="headerInDays"><%= @challenge.number_of_days %> Days Challenge</h2>
+</div>
 
-<% Day.all.each do |d| %>
 
+
+<div class="containers">
+  <% arr = (1..Day.count + 1).to_a.sort{ rand() - 0.5}[1..@challenge.number_of_days].sort %>
+  <% day = 0 %>
+   <% arr.each do |num| %>
+   <% day= day + 1 %>
   <div class="image-background">
-    <p><%= link_to "#{d.id}", exercises_path, class: "image-link" %></p>
-  </div>
 
+    <a href="<%= day_path(Day.all.sample.id)%>" class="button button--piyo">
+        <div class="button__wrapper">
+            <span class="button__text"><%= day %> Day</span>
+        </div>
+        <div class="characterBox">
+            <div class="character wakeup">
+                <div class="character__face"></div>
+            </div>
+            <div class="character wakeup">
+                <div class="character__face"></div>
+            </div>
+            <div class="character">
+                <div class="character__face"></div>
+            </div>
+        </div>
+    </a>
+  </div>
 <% end %>
 </div>
 
-<hr>
 
-<div>
-  <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> |
-  <%= link_to "Back to challenges", challenges_path %>
-
-  <%= button_to "Destroy this challenge", @challenge, method: :delete %>
 </div>
+<% if current_user.email == "alina@example.com" %>
+<div>
+  <%= link_to "Edit this challenge", edit_challenge_path(@challenge) %> 
+   <%= link_to "Back to challenges", challenges_path %>
+  <%= button_to "Destroy this challenge", @challenge, method: :delete %> 
+ </div>
+ <%end%>
+
+</body>

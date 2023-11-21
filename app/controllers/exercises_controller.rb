@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  # before_action :set_day
   before_action :set_exercise, only: %i[ show edit update destroy ]
 
   # GET /exercises or /exercises.json
@@ -12,7 +13,8 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/new
   def new
-    @exercise = Exercise.new
+    @exercise = @day.exercises.new
+    
   end
 
   # GET /exercises/1/edit
@@ -21,7 +23,7 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = @day.exercises.new(exercise_params)
 
     respond_to do |format|
       if @exercise.save
@@ -36,6 +38,7 @@ class ExercisesController < ApplicationController
 
   # PATCH/PUT /exercises/1 or /exercises/1.json
   def update
+   
     respond_to do |format|
       if @exercise.update(exercise_params)
         format.html { redirect_to exercise_url(@exercise), notice: "Exercise was successfully updated." }
@@ -59,6 +62,10 @@ class ExercisesController < ApplicationController
 
   private
 
+  # def set_day
+  #   @day = Day.find(params[:id])
+  # end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_exercise
     @exercise = Exercise.find(params[:id])
@@ -66,6 +73,6 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.require(:exercise).permit(:title, :video)
+    params.require(:exercise).permit(:title, :video, :day_id)
   end
 end

@@ -8,6 +8,8 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/1 or /challenges/1.json
   def show
+    @challenge_id = params.fetch(:id).to_i
+
   end
 
   # GET /challenges/new
@@ -36,6 +38,7 @@ class ChallengesController < ApplicationController
 
   # PATCH/PUT /challenges/1 or /challenges/1.json
   def update
+    @challenge = Challenge.new(challenge_params)
     respond_to do |format|
       if @challenge.update(challenge_params)
         format.html { redirect_to challenge_url(@challenge), notice: "Challenge was successfully updated." }
@@ -65,6 +68,6 @@ class ChallengesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def challenge_params
-      params.require(:challenge).permit(:user_id, :active, :child_id, :title)
+      params.require(:challenge).permit( :active, :title, :number_of_days)
     end
 end

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_31_203347) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_16_210021) do
   create_table "challenges", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "active"
     t.integer "child_id"
     t.string "title"
+    t.integer "number_of_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,12 +33,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_203347) do
   create_table "days", force: :cascade do |t|
     t.integer "challenge_id"
     t.date "completed_at"
-    t.integer "exercise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "exercises", force: :cascade do |t|
+    t.integer "day_id"
     t.string "title"
     t.string "video"
     t.datetime "created_at", null: false

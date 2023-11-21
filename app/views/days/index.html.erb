@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<% if current_user.email == "alina@example.com" %>
 <h1 id="header">Days</h1>
 
 <div id="days">
@@ -12,3 +12,6 @@
 </div>
 
 <%= link_to "New day", new_day_path %>
+<%else%>
+<p>Only for admin!</p>
+<%end%>

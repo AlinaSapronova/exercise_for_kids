@@ -11,25 +11,31 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.number_field :user_id %>
-  </div>
+  <%# <div>
+    <%= form.label :user_id, style: "display: block" 
+    <%= form.hidden_field :user_id %>
+  <%# </div> %> 
 
   <div>
     <%= form.label :active, style: "display: block" %>
     <%= form.check_box :active %>
   </div>
 
-  <div>
-    <%= form.label :child_id, style: "display: block" %>
-    <%= form.number_field :child_id %>
+  <%# <div>
+    <%= form.label :child_id, style: "display: block"
+    <%= form.hidden_field :child_id %>
+  <%# </div>  %>
+
+ <div>
+    <%= form.label :number_of_days, style: "display: block" %>
+    <%= form.text_field :number_of_days %>
   </div>
 
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
+
 
   <div>
     <%= form.submit %>

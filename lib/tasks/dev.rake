@@ -85,20 +85,25 @@ unless Rails.env.production?
 
     task add_days: :environment do
       Day.destroy_all
-      Exercise.destroy_all
       puts "adding days"
-      10.times do |i|
-        day = Day.create(
-         challenge_id: Challenge.all.sample.id,
-         completed_at: Faker::Date.between(from: 30.days.ago, to: Date.today)
-         )
-      end
+      8.times do |i|
+        day = Day.new
+         day.challenge_id = Challenge.all.sample.id
+         day.completed_at = Faker::Date.forward(from: Date.current, days: 30)
+         day.save
+    end
+  end
         puts "done"
-        100.to_i.times do |i|
+
+      task add_exercises: :environment do
+        Exercise.destroy_all
+        Day.all.each do |d|
+        10.to_i.times do |i|
           ex = Exercise.new
-             ex.day_id = Day.all.sample.id
+             ex.day_id = d.id
              ex.save
          end
+        end
       end
         puts "adding exercises"
         puts "done"

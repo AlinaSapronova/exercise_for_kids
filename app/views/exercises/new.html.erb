@@ -1,3 +1,4 @@
+<% if current_user.email == "alina@example.com" %>
 <h1>New exercise</h1>
 
 <%= render "form", exercise: @exercise %>
@@ -7,3 +8,4 @@
 <div>
   <%= link_to "Back to exercises", exercises_path %>
 </div>
+<%end%>

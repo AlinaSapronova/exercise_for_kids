@@ -10,6 +10,8 @@ class ChildrenController < ApplicationController
   def show
     @children = Child.where(:user_id => current_user.id)
     @challenges = Challenge.all
+   
+
   end
 
   # GET /children/new

@@ -10,10 +10,9 @@ Rails.application.routes.draw do
 
   # landing page if you are not logged in
   root "main#welcome" 
-  
-  resources :days do
-    resources :exercises
-  end
+
+  resources :days 
+  resources :exercises
   resources :challenges
   resources :children
  

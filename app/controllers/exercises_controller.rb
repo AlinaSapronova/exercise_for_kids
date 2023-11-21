@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :set_day
+  # before_action :set_day
   before_action :set_exercise, only: %i[ show edit update destroy ]
 
   # GET /exercises or /exercises.json
@@ -62,9 +62,9 @@ class ExercisesController < ApplicationController
 
   private
 
-  def set_day
-    @day = Day.find(params[:id])
-  end
+  # def set_day
+  #   @day = Day.find(params[:id])
+  # end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_exercise
@@ -73,6 +73,6 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.require(:exercise).permit(:title, :video)
+    params.require(:exercise).permit(:title, :video, :day_id)
   end
 end

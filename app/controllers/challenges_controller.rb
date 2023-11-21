@@ -9,6 +9,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1 or /challenges/1.json
   def show
     @challenge_id = params.fetch(:id).to_i
+
   end
 
   # GET /challenges/new

@@ -65,6 +65,6 @@ class DaysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def day_params
-      params.require(:day).permit(:challenge_id, :completed_at, :exercise_id)
+      params.require(:day).permit(:challenge_id, :completed_at)
     end
 end

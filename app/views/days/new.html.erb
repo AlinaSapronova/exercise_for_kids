@@ -1,9 +1,8 @@
+<% if current_user.email == "alina@example.com" %>
 <h1>New day</h1>
-
 <%= render "form", day: @day %>
-
 <br>
-
 <div>
   <%= link_to "Back to days", days_path %>
 </div>
+<%end%>

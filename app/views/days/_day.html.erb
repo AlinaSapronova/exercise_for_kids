@@ -1,17 +1,26 @@
-<div id="<%= dom_id day %>">
-  <p>
+
+<div id="<%= dom_id day %>" class="exercises">
+  <%# <p>
     <strong>Challenge:</strong>
     <%= day.challenge_id %>
-  </p>
+  <%# </p> %>
+  <%# <p>
+    <strong>Exercise:</strong> %>
 
-  <p>
+<%# <%= link_to "Back to days", "challenges/" %> 
+
+    <% Exercise.where(:day_id => day.id).each do |ex| %>
+    <p class="title"> <%= ex.title.capitalize!.gsub('_', ' ') %></p>
+     <iframe width="560" height="315" src="<%= ex.video %>"
+    frameborder="0" allow="accelerometer; 
+    clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    class="video" allowfullscreen>
+  </iframe>
+    
+   
+    <% end %>
+
     <strong>Completed at:</strong>
     <%= day.completed_at %>
-  </p>
-
-  <p>
-    <strong>Exercise:</strong>
-    <%= day.exercise_id %>
-  </p>
 
 </div>

@@ -2,6 +2,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= link_to 'Back', '#', class: "backLink", onclick: "event.preventDefault(); history.back();" %>
+
 <%= render @day %>
 
 <% if current_user.email == "alina@example.com" %>

@@ -1,16 +1,13 @@
-# fly.toml app configuration file generated for exercise-for-kids on 2023-11-27T11:44:19-06:00
+# fly.toml app configuration file generated for exercise-for-kids-wispy-surf-7071 on 2023-11-27T11:50:50-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "exercise-for-kids"
+app = "exercise-for-kids-wispy-surf-7071"
 primary_region = "ord"
 console_command = "/rails/bin/rails console"
 
 [build]
-
-[deploy]
-  release_command = "./bin/rails db:prepare"
 
 [http_service]
   internal_port = 3000

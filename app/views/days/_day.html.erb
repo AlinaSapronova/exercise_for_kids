@@ -1,8 +1,6 @@
 <div id="<%= dom_id day %>" class="exercises">
-   <% Exercise.where(:day_id => day.id).each do |ex| %>
-   <%# <% class="title"> <%= ex.title.capitalize!.gsub("_", " ") %>
-   
-   <%= video_tag("#{ex.video}", controls: true, class: "video-style", id: "video#{ex.id + 1}") %>
+   <% Exercise.where(:day_id => day.id).each do |exercise | %>
+   <%= video_tag("#{exercise.video}", controls: true, class: "video-style", id: "video#{exercise.id + 1}") %>
    
 
   <div id="countdown-container">

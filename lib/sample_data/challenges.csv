@@ -1,0 +1,8 @@
+id,user_id,active,child_id,title,number_of_days,created_at,updated_at
+7,3,false,1,Days Challenge,4,2023-11-16 21:02:29.172734,2023-11-16 21:02:29.172734
+8,3,false,3,Days Challenge,2,2023-11-16 21:02:29.176127,2023-11-16 21:02:29.176127
+9,3,false,1,Days Challenge,3,2023-11-16 21:02:29.179051,2023-11-16 21:02:29.179051
+10,5,false,1,Days Challenge,7,2023-11-16 21:02:00,2023-11-16 21:02:00
+11,5,false,1,Days Challenge,1,2023-11-16 21:02:29.184808,2023-11-16 21:02:29.184808
+
+

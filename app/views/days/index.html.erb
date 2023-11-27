@@ -4,7 +4,7 @@
 
 <div id="days">
   <% @days.each do |day| %>
-    <%= render day %>
+    <p>Day ID: <%= day.id %></p>
     <p>
       <%= link_to "Show this day", day %>
     </p>

@@ -5,6 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises or /exercises.json
   def index
     @exercises = Exercise.all
+   
   end
 
   # GET /exercises/1 or /exercises/1.json
@@ -13,7 +14,7 @@ class ExercisesController < ApplicationController
 
   # GET /exercises/new
   def new
-    @exercise = @day.exercises.new
+    @exercise = Exercise.new
     
   end
 
@@ -23,7 +24,7 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @exercise = @day.exercises.new(exercise_params)
+    @exercise = Exercises.new(exercise_params)
 
     respond_to do |format|
       if @exercise.save
@@ -73,6 +74,6 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.require(:exercise).permit(:title, :video, :day_id)
+    params.require(:exercise).permit(:id, :title, :video, :day_id)
   end
 end

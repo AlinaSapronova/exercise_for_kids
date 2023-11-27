@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<% @exercises.order(:day_id).each do |exercise| %>
+
 <%= render @exercise %>
-<%end%>
+
 <% if current_user.email == "alina@example.com" %>
 <div>
-  <%= link_to "Edit this exercise", edit_exercise_path(@exercise) 
+  <%= link_to "Edit this exercise", edit_exercise_path(@exercise) %>
   <%= link_to "Back to exercises", exercises_path %> 
 
   <%= button_to "Destroy this exercise", @exercise, method: :delete %>  
 </div>
-<%end%>
+<% end %>

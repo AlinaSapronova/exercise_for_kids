@@ -2,13 +2,19 @@
 
 <h1 id="header">Exercises</h1>
 <% if current_user.email == "alina@example.com" %>
+<p>
 <%= link_to "New exercise", new_exercise_path %>
+</p>
+<% end %>
 <div id="exercises">
-  <% @exercises.order(:day_id).each do |exercise| %>
-    <%= render exercise %>
-    <p>
-      <%= link_to "Show this exercise", exercise %>
-    </p>
+  <% @exercises.each do |exercise| %> 
+     <p><%= exercise.title %></p>
+     <div class="video-container">
+      <%= video_tag("#{exercise.video}", controls: true, class: "video-style") %>
+      </div>
+       <p>
+       <%= link_to "Show this exercise", exercise %>
+      </p>
   <% end %>
+   
 </div>
-<%end%>

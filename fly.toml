@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # fly.toml app configuration file generated for exercise-for-kids on 2023-11-27T15:03:15-06:00
+=======
+# fly.toml app configuration file generated for exercise-for-kids on 2023-11-27T20:47:28Z
+>>>>>>> 39a2b079cab5db2c2bd6009a4ec16e823f0e4b80
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #

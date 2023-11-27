@@ -13,3 +13,6 @@ class Day < ApplicationRecord
   has_many :exercises
 
 end
+
+
+

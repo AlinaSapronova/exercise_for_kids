@@ -34,3 +34,5 @@ class Exercise < ApplicationRecord
     end
   end
 end
+
+

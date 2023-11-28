@@ -14,9 +14,7 @@
 class Challenge < ApplicationRecord
   
   has_many  :days, class_name: "Day", foreign_key: "challenge_id"
-  belongs_to :user
-  belongs_to :child
+  # belongs_to :user
+  # belongs_to :child
 
 end
-
-

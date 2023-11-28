@@ -10,7 +10,6 @@
 #  day_id     :integer
 #
 class Exercise < ApplicationRecord
-  belongs_to :day
 
   # mount_uploader :video, VideoUploader
 
@@ -34,5 +33,3 @@ class Exercise < ApplicationRecord
     end
   end
 end
-
-
